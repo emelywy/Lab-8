@@ -23,7 +23,7 @@ public class ClientRepository {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace(); // у разі помилки
+            throw new RuntimeException(e); // у разі помилки
         }
     }
 
@@ -45,7 +45,7 @@ public class ClientRepository {
                 client.setEmail(rs.getString("email"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return client;
     }
@@ -66,7 +66,7 @@ public class ClientRepository {
                 list.add(c);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return list;
     }

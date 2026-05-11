@@ -31,7 +31,7 @@ public class ApplicationRepository {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -57,7 +57,7 @@ public class ApplicationRepository {
                 app.setApartmentId(rs.getLong("apartment_id"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return app;
     }
@@ -78,7 +78,7 @@ public class ApplicationRepository {
                 list.add(app);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return list;
     }

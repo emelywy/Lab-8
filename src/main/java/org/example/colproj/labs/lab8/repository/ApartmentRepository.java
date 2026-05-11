@@ -28,7 +28,7 @@ public class ApartmentRepository {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -52,7 +52,7 @@ public class ApartmentRepository {
                 a.setStatus(rs.getString("status"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return a;
     }
@@ -74,7 +74,7 @@ public class ApartmentRepository {
                 list.add(a);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         return list;
     }
