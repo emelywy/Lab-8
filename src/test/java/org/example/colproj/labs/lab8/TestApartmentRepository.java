@@ -13,18 +13,18 @@ public class TestApartmentRepository {
     ApartmentRepository apartmentRepository = new ApartmentRepository();
 
     @Test
-    public void Test1(){
+    public void test1(){
         assertEquals(10, 5 + 5); // проста арифметика для перевірки середовища тестування
     }
 
     @Test
-    public void TestApartmentById(){
+    public void testApartmentById(){
         Apartment apartment = apartmentRepository.getById(1L);
         assertNotNull("Квартиру з ID 1 не знайдено", apartment); // додаємо повідомлення, яке виведеться, якщо тест впаде
     }
 
     @Test
-    public void TestApartmentTypes(){
+    public void testApartmentTypes(){
         List<Apartment> list = apartmentRepository.getAll(); // отримуємо всі апартаменти з бази
 
         boolean hasEconom = false;
