@@ -24,7 +24,7 @@ public class BillRepository {
             ps.executeUpdate();
 
         } catch (SQLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -46,7 +46,7 @@ public class BillRepository {
                 bill.setPaid(rs.getBoolean("paid"));
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+           throw new RuntimeException(e);
         }
         return bill;
     }
@@ -66,7 +66,7 @@ public class BillRepository {
                 list.add(bill);
             }
         } catch (SQLException e) {
-            e.printStackTrace();
+           throw new RuntimeException(e);
         }
         return list;
     }
