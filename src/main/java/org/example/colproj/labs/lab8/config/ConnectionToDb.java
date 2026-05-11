@@ -6,24 +6,25 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ConnectionToDb { // метод, який повертає об'єкт з'єднання
+public class ConnectionToDb {
 
     public Connection getConnection() {
-
         Connection connection;
 
-        try { // виклик DriverManager для отримання з'єднання
+        try {
+            
             connection = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3308/hotel_system?useSSL=false&serverTimezone=UTC",
                     "root",
                     ""
-            );
-            System.out.println("Connected to database successfully"); // вивід повідомлення про успішне підключення
+            ); // NOSONAR
+            
+            System.out.println("Connected to database successfully");
         }
-        catch (SQLException e) { //якщо підключитися не вдалося
+        catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
-        return connection;  // повертаємо налаштоване з'єднання для подальшого використання
+        return connection;
     }
 }
