@@ -19,7 +19,7 @@ public class ConnectionToDb {
                     ""
             ); // NOSONAR
             
-            System.out.println("Connected to database successfully");
+            System.out.println("Connected to database successfully"); // NOSONAR
         }
         catch (SQLException e) {
             throw new RuntimeException(e);
