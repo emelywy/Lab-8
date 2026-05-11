@@ -13,18 +13,18 @@ public class TestApplicationRepository {
     ApplicationRepository applicationRepository = new ApplicationRepository();
 
     @Test
-    public void Test1(){
+    public void test1(){
         assertEquals(4, 2 * 2); // проста арифметика для перевірки середовища тестування
     }
 
     @Test
-    public void TestGetApplicationById(){ // запит до таблиці applications
+    public void testGetApplicationById(){ // запит до таблиці applications
         Application app = applicationRepository.getById(1L);
         assertNotNull(app);
     }
 
     @Test
-    public void TestGetAllApplications(){
+    public void testGetAllApplications(){
         List<Application> list = applicationRepository.getAll();
         assertTrue(list.size() > 0); // переконуємось, що база даних не порожня
     }
