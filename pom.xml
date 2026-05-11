@@ -14,6 +14,8 @@
         <maven.compiler.source>24</maven.compiler.source>
         <maven.compiler.target>24</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <sonar.organization>emelywy</sonar.organization>
+        <sonar.inclusions>src/main/java/org/example/colproj/labs/lab8/**,src/test/java/org/example/colproj/labs/lab8/**</sonar.inclusions>
     </properties>
 
     <dependencies>
@@ -23,6 +25,8 @@
             <artifactId>mysql-connector-j</artifactId>
             <version>8.4.0</version>
         </dependency>
+
+
 
         <dependency>
             <groupId>junit</groupId>
